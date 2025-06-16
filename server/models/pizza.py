@@ -19,6 +19,7 @@ class Pizza(db.Model):
     VALID_CATEGORIES = ['classic', 'specialty', 'vegetarian', 'vegan', 'gluten-free']
     # List of valid pizza sizes
     VALID_SIZES = ['small', 'medium', 'large']
+    # Multipliers for pizza prices based on size
     SIZE_PRICE_MULTIPLIERS = {
         'small': 1.0,
         'medium': 1.5,
