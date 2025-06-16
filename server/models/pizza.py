@@ -148,7 +148,11 @@ class Pizza(db.Model):
         return self.price
 
     def get_discount_percentage(self):
-        """Calculate the discount percentage for active special offers"""
+        """
+        Calculate the discount percentage for active special offers.
+        Returns:
+            float: The discount percentage if a special offer is active, otherwise 0.0.
+        """
         if self.is_special and self.special_price is not None:
             now = datetime.utcnow()
             if (self.special_start_date is None or now >= self.special_start_date) and \
