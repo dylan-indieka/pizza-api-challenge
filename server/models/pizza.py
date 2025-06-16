@@ -116,7 +116,13 @@ class Pizza(db.Model):
         return json.loads(self.customization_options)
 
     def set_customization_options(self, options):
-        """Set customization options from a dictionary"""
+        """
+        Set customization options from a dictionary.
+        Args:
+            options (dict): Customization options to set.
+        Raises:
+            ValueError: If options is not a dictionary.
+        """
         if not isinstance(options, dict):
             raise ValueError("Customization options must be a dictionary")
         self.customization_options = json.dumps(options)
