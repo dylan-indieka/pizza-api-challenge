@@ -98,7 +98,11 @@ class Pizza(db.Model):
         self.rating = total_rating / self.rating_count
 
     def get_allergens_list(self):
-        """Return allergens as a list"""
+        """
+        Return allergens as a list of strings.
+        Returns:
+            list: List of allergen names (str) for this pizza.
+        """
         return [a.strip() for a in self.allergens.split(',')] if self.allergens else []
 
     def get_customization_options(self):
