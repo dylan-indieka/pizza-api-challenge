@@ -83,7 +83,13 @@ class Pizza(db.Model):
         self.is_available = not self.is_available
 
     def update_rating(self, new_rating):
-        """Update the average rating with a new rating"""
+        """
+        Update the average rating with a new rating.
+        Args:
+            new_rating (float): The new rating to add (must be between 0 and 5).
+        Raises:
+            ValueError: If the new rating is not between 0 and 5.
+        """
         if new_rating < 0 or new_rating > 5:
             raise ValueError("Rating must be between 0 and 5")
         
