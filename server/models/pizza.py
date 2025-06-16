@@ -63,7 +63,15 @@ class Pizza(db.Model):
     restaurant_pizzas = db.relationship('RestaurantPizza', back_populates='pizza')
 
     def get_price_for_size(self, size):
-        """Calculate the price for a specific size"""
+        """
+        Calculate the price for a specific size.
+        Args:
+            size (str): The size of the pizza ('small', 'medium', 'large').
+        Returns:
+            float: The calculated price for the given size.
+        Raises:
+            ValueError: If the size is invalid.
+        """
         if size not in self.VALID_SIZES:
             raise ValueError(f"Invalid size: {size}")
         return self.price * self.SIZE_PRICE_MULTIPLIERS[size]
