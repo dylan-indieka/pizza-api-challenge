@@ -52,7 +52,7 @@ class Pizza(db.Model):
     # JSON string of available customizations for the pizza
     customization_options = db.Column(db.Text)  # JSON string of available customizations
     
-    # Popularity tracking
+    # Tracks the number of times this pizza has been ordered
     order_count = db.Column(db.Integer, default=0)
     last_ordered_at = db.Column(db.DateTime)
     
