@@ -1,3 +1,7 @@
+"""
+This module defines the Pizza model for the Pizza Restaurant API.
+It includes fields for pizza details, nutritional info, customization, popularity, and special offers.
+"""
 from flask_sqlalchemy import SQLAlchemy
 import json
 from datetime import datetime
@@ -102,6 +106,15 @@ class Pizza(db.Model):
                (self.special_end_date is None or now <= self.special_end_date):
                 return self.special_price
         return self.price
+
+    def get_discount_percentage(self):
+        """Calculate the discount percentage for active special offers"""
+        if self.is_special and self.special_price is not None:
+            now = datetime.utcnow()
+            if (self.special_start_date is None or now >= self.special_start_date) and \
+               (self.special_end_date is None or now <= self.special_end_date):
+                return round(((self.price - self.special_price) / self.price) * 100, 2)
+        return 0.0
 
     def set_special_offer(self, special_price, start_date=None, end_date=None):
         """Set a special offer for the pizza"""
