@@ -186,6 +186,7 @@ class Pizza(db.Model):
         self.special_start_date = None
         self.special_end_date = None
 
+    # Convert the Pizza object to a dictionary for API responses
     def to_dict(self):
         return {
             'id': self.id,
