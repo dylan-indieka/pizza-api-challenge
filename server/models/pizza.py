@@ -77,7 +77,9 @@ class Pizza(db.Model):
         return self.price * self.SIZE_PRICE_MULTIPLIERS[size]
 
     def toggle_availability(self):
-        """Toggle the availability status of the pizza"""
+        """
+        Toggle the availability status of the pizza (available/unavailable).
+        """
         self.is_available = not self.is_available
 
     def update_rating(self, new_rating):
