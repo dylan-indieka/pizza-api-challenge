@@ -128,7 +128,9 @@ class Pizza(db.Model):
         self.customization_options = json.dumps(options)
 
     def increment_order_count(self):
-        """Increment the order count and update last ordered timestamp"""
+        """
+        Increment the order count and update the last ordered timestamp for this pizza.
+        """
         self.order_count += 1
         self.last_ordered_at = datetime.utcnow()
 
