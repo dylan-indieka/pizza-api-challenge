@@ -49,7 +49,7 @@ class Pizza(db.Model):
     fat = db.Column(db.Float)  # in grams
     sodium = db.Column(db.Integer)  # in mg
     
-    # Customization options (stored as JSON)
+    # JSON string of available customizations for the pizza
     customization_options = db.Column(db.Text)  # JSON string of available customizations
     
     # Popularity tracking
