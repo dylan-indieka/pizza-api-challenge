@@ -54,6 +54,7 @@ class Pizza(db.Model):
     
     # Tracks the number of times this pizza has been ordered
     order_count = db.Column(db.Integer, default=0)
+    # Timestamp of the last time this pizza was ordered
     last_ordered_at = db.Column(db.DateTime)
     
     # Special offers
