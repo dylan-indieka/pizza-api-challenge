@@ -17,6 +17,7 @@ class Pizza(db.Model):
 
     # List of valid pizza categories
     VALID_CATEGORIES = ['classic', 'specialty', 'vegetarian', 'vegan', 'gluten-free']
+    # List of valid pizza sizes
     VALID_SIZES = ['small', 'medium', 'large']
     SIZE_PRICE_MULTIPLIERS = {
         'small': 1.0,
