@@ -25,6 +25,7 @@ class Pizza(db.Model):
         'medium': 1.5,
         'large': 2.0
     }
+    # List of valid allergens for pizzas
     VALID_ALLERGENS = ['dairy', 'eggs', 'fish', 'shellfish', 'tree_nuts', 'peanuts', 'wheat', 'soy']
 
     id = db.Column(db.Integer, primary_key=True)
