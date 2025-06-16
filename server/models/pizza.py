@@ -15,7 +15,7 @@ class Pizza(db.Model):
     """
     __tablename__ = 'pizzas'
 
-    # Valid categories and sizes
+    # List of valid pizza categories
     VALID_CATEGORIES = ['classic', 'specialty', 'vegetarian', 'vegan', 'gluten-free']
     VALID_SIZES = ['small', 'medium', 'large']
     SIZE_PRICE_MULTIPLIERS = {
