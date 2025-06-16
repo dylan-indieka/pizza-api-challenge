@@ -161,7 +161,15 @@ class Pizza(db.Model):
         return 0.0
 
     def set_special_offer(self, special_price, start_date=None, end_date=None):
-        """Set a special offer for the pizza"""
+        """
+        Set a special offer for the pizza.
+        Args:
+            special_price (float): The special price to set (must be less than regular price).
+            start_date (datetime, optional): Start date of the special offer.
+            end_date (datetime, optional): End date of the special offer.
+        Raises:
+            ValueError: If the special price is not less than the regular price.
+        """
         if special_price >= self.price:
             raise ValueError("Special price must be less than regular price")
         self.is_special = True
