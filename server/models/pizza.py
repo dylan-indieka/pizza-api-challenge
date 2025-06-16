@@ -9,6 +9,10 @@ from datetime import datetime
 db = SQLAlchemy()
 
 class Pizza(db.Model):
+    """
+    SQLAlchemy model for pizzas in the Pizza Restaurant API.
+    Includes details such as ingredients, price, nutritional info, customization, popularity, and special offers.
+    """
     __tablename__ = 'pizzas'
 
     # Valid categories and sizes
