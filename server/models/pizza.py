@@ -106,7 +106,11 @@ class Pizza(db.Model):
         return [a.strip() for a in self.allergens.split(',')] if self.allergens else []
 
     def get_customization_options(self):
-        """Return customization options as a dictionary"""
+        """
+        Return customization options as a dictionary.
+        Returns:
+            dict: Customization options for this pizza.
+        """
         if not self.customization_options:
             return {}
         return json.loads(self.customization_options)
