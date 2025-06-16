@@ -135,7 +135,11 @@ class Pizza(db.Model):
         self.last_ordered_at = datetime.utcnow()
 
     def get_current_price(self):
-        """Get the current price considering any active special offers"""
+        """
+        Get the current price considering any active special offers.
+        Returns:
+            float: The current price (special price if active, otherwise regular price).
+        """
         if self.is_special and self.special_price is not None:
             now = datetime.utcnow()
             if (self.special_start_date is None or now >= self.special_start_date) and \
