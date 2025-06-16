@@ -178,7 +178,9 @@ class Pizza(db.Model):
         self.special_end_date = end_date
 
     def end_special_offer(self):
-        """End the current special offer"""
+        """
+        End the current special offer for this pizza and reset all related fields.
+        """
         self.is_special = False
         self.special_price = None
         self.special_start_date = None
